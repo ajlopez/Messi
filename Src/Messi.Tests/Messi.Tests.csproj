@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Endpoints\LambdaOutputEndpointTest.cs" />
     <Compile Include="Endpoints\EnumerableInputEndpointTest.cs" />
+    <Compile Include="MessageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
