@@ -23,7 +23,11 @@
         {
             EnumerableInputEndpoint endpoint = new EnumerableInputEndpoint(new object[] { "foo" });
 
-            Assert.AreEqual("foo", endpoint.NextMessage());
+            var result = endpoint.NextMessage();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("foo", result.Body);
+
             Assert.IsNull(endpoint.NextMessage());
         }
 
@@ -32,9 +36,21 @@
         {
             EnumerableInputEndpoint endpoint = new EnumerableInputEndpoint(new object[] { "foo", "bar", "baz" });
 
-            Assert.AreEqual("foo", endpoint.NextMessage());
-            Assert.AreEqual("bar", endpoint.NextMessage());
-            Assert.AreEqual("baz", endpoint.NextMessage());
+            var result = endpoint.NextMessage();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("foo", result.Body);
+
+            result = endpoint.NextMessage();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("bar", result.Body);
+
+            result = endpoint.NextMessage();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("baz", result.Body);
+
             Assert.IsNull(endpoint.NextMessage());
         }
     }

@@ -14,12 +14,12 @@
             this.enumerator = elements.GetEnumerator();
         }
 
-        public object NextMessage()
+        public Message NextMessage()
         {
             if (!this.enumerator.MoveNext())
                 return null;
 
-            return this.enumerator.Current;
+            return new Message(this.enumerator.Current);
         }
     }
 }
