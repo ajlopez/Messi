@@ -13,15 +13,15 @@
         [TestMethod]
         public void SendMessage()
         {
-            object message = "Foo";
-            object processed = null;
+            object body = "Foo";
+            Message processed = null;
 
-            LambdaOutputEndpoint endpoint = new LambdaOutputEndpoint(obj => { processed = obj; });
+            LambdaOutputEndpoint endpoint = new LambdaOutputEndpoint(msg => { processed = msg; });
 
-            endpoint.Send(message);
+            endpoint.Send(new Message("Foo"));
 
             Assert.IsNotNull(processed);
-            Assert.AreSame(message, processed);
+            Assert.AreSame(body, processed.Body);
         }
     }
 }

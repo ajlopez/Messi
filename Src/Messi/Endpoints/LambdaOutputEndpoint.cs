@@ -7,14 +7,14 @@
 
     public class LambdaOutputEndpoint
     {
-        Action<object> action;
+        Action<Message> action;
 
-        public LambdaOutputEndpoint(Action<object> action)
+        public LambdaOutputEndpoint(Action<Message> action)
         {
             this.action = action;
         }
 
-        public void Send(object message)
+        public void Send(Message message)
         {
             this.action(message);
         }
