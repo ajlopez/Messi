@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class EnumerableInputEndpoint
+    public class EnumerableInputEndpoint : Messi.Endpoints.IInputEndpoint
     {
         private IEnumerator<object> enumerator;
 

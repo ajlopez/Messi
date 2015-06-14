@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class LambdaOutputEndpoint
+    public class LambdaOutputEndpoint : Messi.Endpoints.IOutputEndpoint
     {
         Action<Message> action;
 

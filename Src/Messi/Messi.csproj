@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Endpoints\EnumerableInputEndpoint.cs" />
+    <Compile Include="Endpoints\IInputEndpoint.cs" />
+    <Compile Include="Endpoints\IOutputEndpoint.cs" />
     <Compile Include="Endpoints\LambdaOutputEndpoint.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
