@@ -10,6 +10,7 @@
     {
         IInputEndpoint input;
         IOutputEndpoint output;
+        Action<Message> action;
 
         public Route From(IInputEndpoint endpoint)
         {
@@ -23,9 +24,21 @@
             return this;
         }
 
+        public Route Process(Action<Message> action)
+        {
+            this.action = action;
+            return this;
+        }
+
         public void ProcessMessage()
         {
-            this.output.Send(this.input.NextMessage());
+            Message message = this.input.NextMessage();
+
+            if (this.action != null)
+                this.action(message);
+
+            if (this.output != null)
+                this.output.Send(message);
         }
     }
 }
