@@ -8,9 +8,9 @@
 
     public class Route
     {
-        IInputEndpoint input;
-        IOutputEndpoint output;
-        Action<Message> action;
+        private IInputEndpoint input;
+        private IOutputEndpoint output;
+        private Action<Message> action;
 
         public Route From(IInputEndpoint endpoint)
         {

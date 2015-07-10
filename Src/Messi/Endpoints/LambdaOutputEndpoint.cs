@@ -7,7 +7,7 @@
 
     public class LambdaOutputEndpoint : Messi.Endpoints.IOutputEndpoint
     {
-        Action<Message> action;
+        private Action<Message> action;
 
         public LambdaOutputEndpoint(Action<Message> action)
         {

@@ -16,7 +16,7 @@
             this.headers = new MessageHeaders();
         }
 
-        public Message(object payload, MessageHeaders headers)
+        public Message(object body, MessageHeaders headers)
         {
             this.body = body;
             this.headers = headers.Clone();
